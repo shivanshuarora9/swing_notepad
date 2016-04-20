@@ -5,24 +5,24 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Controller {
-	JFrame notepad_frame;
-	MenuBar mb;
-	TextArea text;
 	
-	Controller() {
-		notepad_frame = new JFrame("Notepad");
-		notepad_frame.setSize(500,500);
-		mb = new MenuBar();
-		text = new TextArea();
+	private JFrame notepadFrame;
+	private CustomMenuBar mb;
+	private CustomTextArea text;
+	
+	public void initialize() {
 		
-		//mb.setSize(500, 40);
-		//mb.setBounds(0, 0, 500, 100);
-		notepad_frame.setLayout(new BorderLayout());
-		notepad_frame.add(mb,BorderLayout.NORTH);
-		notepad_frame.add(text);
+		notepadFrame = new JFrame("Notepad");
+		notepadFrame.setSize(500,500);
 		
+		mb = new CustomMenuBar();
+		mb.initialize();
 		
-		notepad_frame.setVisible(true);
+		text = new CustomTextArea();
 		
+		notepadFrame.add(text);
+		notepadFrame.setJMenuBar(mb);
+		notepadFrame.setVisible(true);
+	
 	}
 }
