@@ -7,21 +7,21 @@ import java.awt.event.*;
 public class Controller {
 	
 	private JFrame notepadFrame;
-	private CustomMenuBar mb;
-	private CustomTextArea text;
+	private CustomMenuBar menuBar;
+	private CustomTextArea textArea;
 	
 	public void initialize() {
 		
 		notepadFrame = new JFrame("Notepad");
 		notepadFrame.setSize(500,500);
 		
-		mb = new CustomMenuBar();
-		mb.initialize();
+		menuBar = new CustomMenuBar();
+		menuBar.initialize();
 		
-		text = new CustomTextArea();
+		textArea = new CustomTextArea();
 		
-		notepadFrame.add(text);
-		notepadFrame.setJMenuBar(mb);
+		notepadFrame.add(textArea);
+		notepadFrame.setJMenuBar(menuBar);
 		notepadFrame.setVisible(true);
 	
 	}
